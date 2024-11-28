@@ -1,22 +1,46 @@
-![thumbnail-Desafio Java (2)](https://user-images.githubusercontent.com/66698429/227000674-0d88d9f6-cef8-47c3-87b4-b83ff7db4a13.png)
+
+# API Via Cep
 
 
-# Desafio
+A aplicação tem o objetivo de consultar um endereço a partir de um CEP e salvar as informações em um arquivo json.
 
 
-Vamos implementar uma aplicação para consultar um endereço a partir de um CEP e salvar as informações em um arquivo json.
+1. **Classe de Representação de Endereço**  
+   - Criação de uma classe para representar um endereço, contendo os seguintes atributos:
+     - `cep` (Código de Endereçamento Postal)
+     - `uf` (Unidade Federativa)
+     - `cidade` (Cidade)
+     - `bairro` (Bairro)
+     - `logradouro` (Logradouro)
+     - `complemento` (Complemento, opcional)
+
+2. **Consulta à API ViaCEP**  
+   - Implementação de uma classe para realizar consultas à API ViaCEP utilizando um CEP informado.  
+   - Exemplo de consulta: `https://viacep.com.br/ws/{cep}/json`.
+
+3. **Criação de Arquivo JSON**  
+   - Implementação de uma classe para criar e salvar um arquivo no formato JSON contendo os dados de um objeto `Endereco`.
+
+4. **Interface de Interação com o Usuário**  
+   - Criação de uma classe com um método `main` que realiza as seguintes operações:
+     - Solicita ao usuário que informe um CEP.
+     - Utiliza a classe de consulta para buscar os dados do endereço na API ViaCEP.
+     - Salva os dados do endereço retornado em um arquivo JSON.
+
+## Tecnologias Utilizadas
+
+- **Java**: Linguagem principal utilizada no projeto.
+- **Gson**: Biblioteca para manipulação de JSON.
+- **API ViaCEP**: Serviço externo para consulta de endereços.
+
+## Como Executar
+
+1. Compile o projeto utilizando um compilador Java ou sua IDE preferida.
+2. Execute a classe com o método `main`.
+3. Insira o CEP solicitado quando o programa for iniciado.
+4. O programa buscará o endereço correspondente na API ViaCEP.
+5. Os dados do endereço serão salvos em um arquivo JSON no diretório do projeto.
 
 
-## 🔨 Objetivos do projeto
 
-- Criar uma classe que representa um endereço (cep, uf, cidade, bairro, logradouro e complemento);
-- Criar uma classe que consulta a API *ViaCEP* para buscar um endereço a partir de um cep (exemplo: https://viacep.com.br/ws/04101300/json);
-- Criar uma classe que cria um arquivo json contendo os dados de um objeto `Endereco`;
-- Criar uma classe com método main que deve solicitar ao usuário que informe um CEP e na sequencia utilizar as classes para consultar a api ViaCEP e salvar os dados do endereço em um arquivo json.
 
-## Observações:
-- Utilize a biblioteca GSon para converter o JSON devolvido pela API ViaCEP em um objeto `Endereco`;
-- Utilize a biblioteca GSon para salvar um objeto `Endereco` em um arquivo .json;
-- O arquivo deve ter como nome o cep informado (exemplo: `04101300.json`);
-
-Bom desafio!
